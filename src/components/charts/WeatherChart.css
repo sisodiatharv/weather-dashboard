@@ -1,0 +1,82 @@
+.weather-chart {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.weather-chart__header {
+  margin-bottom: 14px;
+}
+
+.weather-chart__title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.weather-chart__subtitle {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.weather-chart__scroll {
+  overflow-x: auto;
+  cursor: grab;
+  border-radius: var(--radius-sm);
+}
+
+.weather-chart__scroll:active {
+  cursor: grabbing;
+}
+
+/* hide scrollbar visually but keep functionality */
+.weather-chart__scroll::-webkit-scrollbar {
+  height: 4px;
+}
+.weather-chart__scroll::-webkit-scrollbar-track {
+  background: var(--surface2);
+  border-radius: 2px;
+}
+.weather-chart__scroll::-webkit-scrollbar-thumb {
+  background: var(--surface3);
+  border-radius: 2px;
+}
+
+.weather-chart__inner {
+  position: relative;
+}
+
+.weather-chart__reset {
+  margin-top: 10px;
+  align-self: flex-end;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.weather-chart__reset:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(56, 189, 248, 0.06);
+}
+
+@media (max-width: 640px) {
+  .weather-chart {
+    padding: 14px;
+  }
+}

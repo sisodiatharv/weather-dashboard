@@ -1,0 +1,92 @@
+.hourly-charts {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  margin-bottom: 32px;
+}
+
+.hourly-chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.hourly-chart-card:hover {
+  border-color: var(--border-hover);
+}
+
+.hourly-chart-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.hourly-chart-card__title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.hourly-chart-card__subtitle {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.hourly-chart-card__header + .weather-chart {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* Temperature unit toggle */
+.temp-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--surface2);
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.temp-toggle__btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.temp-toggle__btn.active {
+  background: var(--accent);
+  color: #000;
+}
+
+.temp-toggle__btn:hover:not(.active) {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .hourly-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hourly-chart-card {
+    padding: 14px;
+  }
+}
